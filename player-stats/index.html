@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1,
+      shrink-to-fit=no">
+    <title>vue player stats</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel='stylesheet' href='./main.css'>
+  </head>
+  <body>
+    <!-- choose 1 of 3 player options to view their stats-->
+    <div id="app">
+      <h3>Select Player</h3>
+      <!-- buttons list -->
+      <ul class="buttons-list">
+        <li v-on:click="showKnightStats">Knight</li>
+        <li v-on:click="showRangerStats">Ranger</li>
+        <li v-on:click="showWizardStats">Wizard</li>
+      </ul>
+      <div v-if="active" class="stats-container" id="stats">
+        <ul class="stat-labels">
+          <li>Weapon:</li>
+          <li>Damage:</li>
+          <li>Accuracy:</li>
+          <li>Health:</li>
+          <li>Mana:</li>
+        </ul>
+        <ul class="stat-stats">
+          <li>{{weapon}}</li>
+          <li>{{damage}}</li>
+          <li>{{accuracy}}</li>
+          <li>{{health}}</li>
+          <li>{{mana}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+    const vueApp = new Vue({
+      el: '#app',
+      data: {
+        active: false,
+        weapon: '',
+        damage: 0,
+        accuracy: 0,
+        health: 0,
+        mana: 0
+      },
+      methods: {
+        showKnightStats: function() {
+          this.active = true;
+          this.weapon = 'Sword'
+          this.damage = 9
+          this.accuracy = 0.75
+          this.health = 100
+          this.mana = 15
+        },
+        showRangerStats: function() {
+          this.active = true;
+          this.weapon = 'Bow'
+          this.damage = 5
+          this.accuracy = 0.45
+          this.health = 75
+          this.mana = 45
+        },
+        showWizardStats: function() {
+          this.active = true;
+          this.weapon = 'Staff'
+          this.damage = 13
+          this.accuracy = 0.6
+          this.health = 60
+          this.mana = 120
+        }
+      }
+    })
+    </script>
+  </body>
+</html>

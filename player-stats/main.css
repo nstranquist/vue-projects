@@ -1,0 +1,31 @@
+#app {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid rgba(0,0,0,.1);
+}
+h3 { text-align: center; }
+
+.buttons-list {
+  list-style: none;
+  display: flex;
+}
+.buttons-list li {
+  cursor: pointer;
+  background: silver;
+  padding: 5px 10px;
+  margin: 0 10px;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(0,0,0,.1);
+}
+.stats-container ul {
+  list-style: none;
+}
+ul {
+  padding: 0 10px;
+}
